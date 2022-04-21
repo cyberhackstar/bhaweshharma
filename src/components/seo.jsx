@@ -22,7 +22,6 @@ const SEO = ({
                         siteUrl
                         siteLanguage
                         image
-                        titleTemplate
                         twitterUsername
                     }
                 }
@@ -30,8 +29,7 @@ const SEO = ({
         `
     );
 
-    const metaTitle = title || site.siteMetadata.title;
-    const template = titleTemplate || site.siteMetadata.titleTemplate;
+    const metaTitle = site.siteMetadata.title;
     const metaDescription = description || site.siteMetadata.description;
     const language = site.siteMetadata.siteLanguage;
     const siteUrl = site.siteMetadata.siteUrl.replace(/\/$/, "");

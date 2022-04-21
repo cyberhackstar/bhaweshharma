@@ -23,7 +23,7 @@ const IndexPage = ({ data }) => {
     const content = normalizedData(data?.homePage?.content || []);
 
     return (
-        <Layout pageTitle="Home Default">
+        <Layout pageTitle="Home Default" className="white-version">
             <Header
                 data={{
                     ...data.header,
@@ -71,11 +71,11 @@ const IndexPage = ({ data }) => {
 };
 
 export const query = graphql`
-    query DefaultPageQuery {
+    query DefaultWhitePageQuery {
         site {
             ...Site
         }
-        header: general(section: { eq: "header-1" }) {
+        header: general(section: { eq: "header-1-white" }) {
             ...Header01
         }
         navigation: general(section: { eq: "menu-1" }) {
@@ -83,10 +83,10 @@ export const query = graphql`
                 ...Menu01
             }
         }
-        footer: general(section: { eq: "footer-1" }) {
+        footer: general(section: { eq: "footer-1-white" }) {
             ...Footer01
         }
-        homePage(title: { eq: "default-home" }) {
+        homePage(title: { eq: "default-white-home" }) {
             content {
                 ...Content01
             }

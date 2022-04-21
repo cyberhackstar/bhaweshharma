@@ -6,8 +6,7 @@ module.exports = {
         author: "Bhawesh Sharma",
         siteLanguage: "en",
         image: "banner.jpg",
-        titleTemplate: "inbio",
-        twitterUsername: "@rainbowit",
+        twitterUsername: "@bhawesh18",
         getform_url:
             "https://getform.io/f/4b8b0d64-aa13-4618-8ab2-19450a43a829",
         socials: [

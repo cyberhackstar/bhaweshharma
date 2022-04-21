@@ -5,7 +5,7 @@ import { normalizedData } from "@utils";
 import Layout from "@layout";
 import Header from "@layout/header/layout-01";
 import Footer from "@layout/footer/layout-01";
-import HeroArea from "@containers/hero/layout-08";
+import HeroArea from "@containers/hero/layout-01";
 import ServicesArea from "@containers/service/layout-01";
 import PortfolioArea from "@containers/portfolio/layout-01";
 import ResumeArea from "@containers/resume/layout-01";
@@ -19,11 +19,11 @@ import SkillArea from "@containers/skill/layout-01";
 import ExperienceArea from "@containers/experience/layout-01";
 import InterviewArea from "@containers/interview/layout-01";
 
-const IndexContentWriterPage = ({ data }) => {
+const IndexPage = ({ data }) => {
     const content = normalizedData(data?.homePage?.content || []);
 
     return (
-        <Layout pageTitle="Content Writer" className="white-version">
+        <Layout pageTitle="Home Default">
             <Header
                 data={{
                     ...data.header,
@@ -71,11 +71,11 @@ const IndexContentWriterPage = ({ data }) => {
 };
 
 export const query = graphql`
-    query ContentWriterWhitePageQuery {
+    query DefaultPageQuery {
         site {
             ...Site
         }
-        header: general(section: { eq: "header-1-white" }) {
+        header: general(section: { eq: "header-1" }) {
             ...Header01
         }
         navigation: general(section: { eq: "menu-1" }) {
@@ -83,10 +83,10 @@ export const query = graphql`
                 ...Menu01
             }
         }
-        footer: general(section: { eq: "footer-3-white" }) {
+        footer: general(section: { eq: "footer-1" }) {
             ...Footer01
         }
-        homePage(title: { eq: "content-writer-home-white" }) {
+        homePage(title: { eq: "default-home" }) {
             content {
                 ...Content01
             }
@@ -99,7 +99,7 @@ export const query = graphql`
     }
 `;
 
-IndexContentWriterPage.propTypes = {
+IndexPage.propTypes = {
     data: PropTypes.shape({
         site: PropTypes.shape({
             siteMetadata: PropTypes.shape({
@@ -123,4 +123,4 @@ IndexContentWriterPage.propTypes = {
     }),
 };
 
-export default IndexContentWriterPage;
+export default IndexPage;

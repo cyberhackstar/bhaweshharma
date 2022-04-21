@@ -3,14 +3,7 @@ import { Helmet } from "react-helmet";
 import PropTypes from "prop-types";
 import { useStaticQuery, graphql } from "gatsby";
 
-const SEO = ({
-    description,
-    image: metaImage,
-    title,
-    titleTemplate,
-    pathname,
-    bodyClass,
-}) => {
+const SEO = ({ description, image: metaImage, title, pathname, bodyClass }) => {
     const { site } = useStaticQuery(
         graphql`
             query {
@@ -29,7 +22,7 @@ const SEO = ({
         `
     );
 
-    const metaTitle = site.siteMetadata.title;
+    const metaTitle = title || site.siteMetadata.title;
     const metaDescription = description || site.siteMetadata.description;
     const language = site.siteMetadata.siteLanguage;
     const siteUrl = site.siteMetadata.siteUrl.replace(/\/$/, "");

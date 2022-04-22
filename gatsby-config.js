@@ -30,7 +30,7 @@ module.exports = {
             },
         ],
         contact: {
-            phone: "+917742261033",
+            phone: "917742261033",
             email: "sharma2001bhawesh@gmail.com",
         },
     },

@@ -13,7 +13,7 @@ module.exports = {
             {
                 id: 1,
                 title: "facebook",
-                path: "https://www.facebook.com/bikku.sharma.9",
+                path: "https://www.facebook.com/bikku.sharma",
                 icon: "Facebook",
             },
             {
